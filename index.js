@@ -81,7 +81,7 @@ function showChart(labels, dataSet) {
     labels: labels,
     datasets: [
       {
-        label: "Frontend skills in use",
+        label: "Frontend skills in use: " + labels.length + " answers",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: dataSet, //[0, 10, 5, 2, 20, 30, 45],

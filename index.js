@@ -1,3 +1,4 @@
+let total = 0;
 const start = () => {
   async function getData() {
     const res = await fetch(
@@ -11,6 +12,7 @@ const start = () => {
     });
 
     skills.shift();
+    total = skills.length;
     parseSkills(skills);
   }
 
@@ -81,7 +83,7 @@ function showChart(labels, dataSet) {
     labels: labels,
     datasets: [
       {
-        label: "Frontend skills in use: " + labels.length + " answers",
+        label: "Frontend skills in use: " + total + " answers",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         data: dataSet, //[0, 10, 5, 2, 20, 30, 45],

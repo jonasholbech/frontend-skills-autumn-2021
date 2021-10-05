@@ -10,7 +10,7 @@ const start = () => {
       const parts = line.split("\t");
       return parts[3];
     });
-
+    //remove first line as it is the headers
     skills.shift();
     total = skills.length;
     parseSkills(skills);
@@ -58,7 +58,7 @@ function remapInconsistencies(skills) {
   const clean = skills.map((item) => {
     return translate(item);
   });
-  //console.log(clean);
+
   prepareForChart(clean);
 }
 start();
@@ -72,13 +72,10 @@ function prepareForChart(data) {
       nextData[item] = 1;
     }
   });
-  console.log(nextData);
-  /* let labels = new Set(data);
-  console.log(labels); */
+
   showChart(Object.keys(nextData), Object.values(nextData));
 }
 function showChart(labels, dataSet) {
-  //const labels = ["January", "February", "March", "April", "May", "June"];
   const data = {
     labels: labels,
     datasets: [
@@ -98,4 +95,3 @@ function showChart(labels, dataSet) {
 
   var myChart = new Chart(document.getElementById("myChart"), config);
 }
-//showChart();

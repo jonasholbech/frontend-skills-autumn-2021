@@ -10,7 +10,7 @@ const start = () => {
       const parts = line.split("\t");
       return parts[3];
     });
-    //remove first line as it is the headers
+    //remove first line as it is the column headers
     skills.shift();
     total = skills.length;
     parseSkills(skills);
